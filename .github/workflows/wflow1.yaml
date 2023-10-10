@@ -14,8 +14,8 @@ jobs:
 
     - name: install apache2
       run: |
-         sudo apt update
-         sudo apt install apache2
+         sudo apt update -y
+         sudo apt install apache2 -y
 
     # Optional: If you wish to destroy the resources after testing:
     # - name: Terraform Destroy
