@@ -22,7 +22,7 @@ jobs:
       - name: Install xvfb
         run: |
            sudo apt update -y
-           sudo apt-get install xvfb
+           sudo apt-get install xvfb -y
 
       - name: Running the Python script
         run: python ./src/Selenium_test.py
