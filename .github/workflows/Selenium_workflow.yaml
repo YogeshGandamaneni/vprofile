@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   scrape:
-    runs-on: ubuntu-latest
+    runs-on: Own
     steps:
       - name: Checking out repo
         uses: actions/checkout@v3
@@ -25,10 +25,4 @@ jobs:
       - name: Running the Python script
         run: python ./src/Selenium_test.py
         
-      - name: Commit and Push The Results From Python Selenium Action
-        run: |
-         git config --global user.name "github-actions[bot]"
-         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-         git add -A
-         git commit -m "GitHub Actions Results added"
-         git push
+     
