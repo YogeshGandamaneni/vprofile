@@ -17,8 +17,16 @@ jobs:
      #   run: sudo apt purge google-chrome-stable  
         
        # Need to fetch reqs if needed
+
+      - name: Installing chrome
+        run: | 
+            wget [9](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
+            sudo apt install ./google-chrome-stable_current_amd64.deb
+            sudo apt install -f
+            
       - name: Installing all necessary packages
         run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+        
       - name: Install xvfb
         run: |
            sudo apt update -y
