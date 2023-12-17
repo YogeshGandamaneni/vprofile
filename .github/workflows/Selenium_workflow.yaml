@@ -27,8 +27,10 @@ jobs:
             
       - name: Installing all necessary packages
         run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
-             google-chrome --version
-        
+
+      - name: check chrome version
+        run: google-chrome --version
+             
       - name: Install xvfb
         run: |
            sudo apt update -y
