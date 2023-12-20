@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   scrape:
-    runs-on: Own
+    runs-on: ubuntu-latest
     steps:
       - name: Checking out repo
         uses: actions/checkout@v3
@@ -14,8 +14,8 @@ jobs:
       - name: Installing package list
         run: apt list --installed    
         
-    #  - name: Removing previous chrome instances on runner 
-     #   run: sudo apt purge google-chrome-stable  
+      - name: Removing previous chrome instances on runner 
+        run: sudo apt purge google-chrome-stable  
         
        # Need to fetch reqs if needed
 
