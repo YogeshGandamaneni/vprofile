@@ -35,10 +35,10 @@ driver = webdriver.Chrome(options = chrome_options)
 
 driver.get('http://github.com')
 print(driver.title)
-element1 = driver.find_element_by_xpath("//button[@aria-label='Toggle navigation']//*[name()='svg']")
+element1 = element1 = driver.find_element(by=By.XPATH, value="//button[@aria-label='Toggle navigation']//*[name()='svg']")
 element1.click()
 
-element2 = driver.find_element_by_xpath("//a[@title='Developers']")
+element2 = driver.find_element(by=By.XPATH, value="//a[@title='Developers']")
 element2.click()
 
 driver.quit()
