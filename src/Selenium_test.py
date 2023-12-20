@@ -40,5 +40,5 @@ element1.click()
 
 element2 = driver.find_element_by_xpath("//a[@title='Developers']")
 element2.click()
-with open('./GitHub_Action_Results.txt', 'w') as f:
-    f.write(f"This was written with a GitHub action {driver.title}")
+
+driver.quit()
