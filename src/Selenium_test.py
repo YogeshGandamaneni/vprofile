@@ -35,10 +35,10 @@ driver = webdriver.Chrome(options = chrome_options)
 
 driver.get('http://github.com')
 print(driver.title)
-element1 = driver.find_elements_by_xpath("//button[@aria-label='Toggle navigation']//*[name()='svg']")
+element1 = driver.find_element_by_xpath("//button[@aria-label='Toggle navigation']//*[name()='svg']")
 element1.click()
 
-element2 = driver.find_elements_by_xpath("//a[@title='Developers']")
+element2 = driver.find_element_by_xpath("//a[@title='Developers']")
 element2.click()
 with open('./GitHub_Action_Results.txt', 'w') as f:
     f.write(f"This was written with a GitHub action {driver.title}")
