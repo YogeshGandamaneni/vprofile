@@ -10,12 +10,13 @@ jobs:
       - name: Sonarcloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
          args: >
               -Dsonar.organization=sonartestw
               -Dsonar.projectKey=vprofile
+              -Dsonar.python.coverage.reportPaths=coverage.xml
       
       - name: Setting up Python
         uses: actions/setup-python@v4
