@@ -14,8 +14,8 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
          args: >
-              -Dsonar.organization=yogeshgandamaneni
-              -Dsonar.projectKey=vprofile
+              -Dsonar.organization=Yogeshgandamaneni
+              -Dsonar.projectKey=yogeshGandamaneni
               -Dsonar.python.coverage.reportPaths=coverage.xml
       
       - name: Setting up Python
