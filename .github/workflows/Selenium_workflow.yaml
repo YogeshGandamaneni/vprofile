@@ -6,7 +6,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      - name: Sonarcloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+         args: >
+              - Dsonar.orgainzation=sonartestw
+              - Dsonar.projectkey=vprofile
+              - Dsonar.python.coverage.reportPaths=coverage.xml
+      
       - name: Setting up Python
         uses: actions/setup-python@v4
         with:
@@ -14,7 +25,6 @@ jobs:
       - name: Installing package list
         run: apt list --installed   
 
-            
       - name: Installing all necessary packages
         run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
 
