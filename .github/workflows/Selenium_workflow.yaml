@@ -14,27 +14,10 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
          args: >
-              -Dsonar.organization=Yogeshgandamaneni
-              -Dsonar.projectKey=yogeshGandamaneni
+              -Dsonar.organization=yogeshgandamaneni
+              -Dsonar.projectKey=vprofile
               -Dsonar.python.coverage.reportPaths=coverage.xml
       
-      - name: Setting up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-      - name: Installing package list
-        run: apt list --installed   
-
-      - name: Installing all necessary packages
-        run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
-
-      - name: check chrome version
-        run: google-chrome --version
-             
-      - name: Install xvfb
-        run: |
-           sudo apt update -y
-           sudo apt-get install xvfb -y
 
       - name: Running the Python script
         run: python ./src/Selenium_test.py
