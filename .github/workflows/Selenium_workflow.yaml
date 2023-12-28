@@ -14,9 +14,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
          args: >
-              - Dsonar.orgainzation=sonartestw
-              - Dsonar.projectkey=vprofile
-              - Dsonar.python.coverage.reportPaths=coverage.xml
+              -Dsonar.orgainzation=sonartestw
+              -Dsonar.projectkey=vprofile
+              -Dsonar.python.coverage.reportPaths=coverage.xml
       
       - name: Setting up Python
         uses: actions/setup-python@v4
