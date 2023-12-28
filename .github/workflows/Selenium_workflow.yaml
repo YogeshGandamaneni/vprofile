@@ -16,7 +16,6 @@ jobs:
          args: >
               -Dsonar.organization=sonartestw
               -Dsonar.projectKey=vprofile
-              #-Dsonar.python.coverage.reportPaths=coverage.xml
       
       - name: Setting up Python
         uses: actions/setup-python@v4
