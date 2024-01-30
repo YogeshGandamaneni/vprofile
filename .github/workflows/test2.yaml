@@ -26,7 +26,8 @@ jobs:
           
       - name: getnodes
         run: |
-             cat /home/runner/work/vprofile/vprofile/kubeconfig
+             pwd
+             ls
         env:
           KUBECONFIG: ${{ github.workspace }}/kubeconfig
           
