@@ -1,0 +1,27 @@
+name: Update Kubernetes 
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: update config
+        run: |
+          echo "$KUBECONFIG" > kubeconfig.yml
+          kubectl config use-context your-context
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+          
+      - name: getnodes
+        run: kubectl get nodes
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+        
+
+   
