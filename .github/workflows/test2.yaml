@@ -7,6 +7,10 @@ jobs:
   update:
     runs-on: ubuntu-latest
 
+    env:
+       region: us-east-1
+       cluster: test-practice
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,7 +25,7 @@ jobs:
           
       - name: Update kubeconfig
         run: |
-          aws eks --region us-east-1 update-kubeconfig --name test-practice
+          aws eks --region $region update-kubeconfig --name $cluster
           ls
 
    #   - name: update config
