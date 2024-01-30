@@ -23,14 +23,12 @@ jobs:
           echo "$KUBECONFIG" > kubeconfig
           chmod 600 kubeconfig
           export KUBECONFIG=$PWD/kubeconfig
-          cat kubeconfig
-        env:
-          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+
           
       - name: getnodes
         run: kubectl get nodes
         env:
-          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+          KUBECONFIG: ${{ github.workspace }}/kubeconfig
         
 
    
