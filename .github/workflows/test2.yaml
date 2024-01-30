@@ -13,8 +13,10 @@ jobs:
 
       - name: update config
         run: |
-          echo "$KUBECONFIG" > kubeconfig.yml
-          cat kubeconfig.yaml
+          echo "$KUBECONFIG" > kubeconfig
+          chmod 600 kubeconfig
+          export KUBECONFIG=$PWD/kubeconfig
+          cat kubeconfig
         env:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
           
