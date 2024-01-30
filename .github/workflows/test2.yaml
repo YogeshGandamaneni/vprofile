@@ -14,7 +14,7 @@ jobs:
       - name: update config
         run: |
           echo "$KUBECONFIG" > kubeconfig.yml
-          kubectl config use-context your-context
+          cat kubeconfig.yaml
         env:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
           
