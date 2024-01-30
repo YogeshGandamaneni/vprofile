@@ -2,11 +2,7 @@ name: Update Kubernetes
 
 on:
   workflow_dispatch:
-  workflow_run: 
-    workflows: ["Update Kubernetes"]
-    branches: [staging]
-    types:
-      - completed  
+
 
 jobs:
   update:
